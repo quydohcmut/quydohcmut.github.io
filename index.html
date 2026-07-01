@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civil Engineer & Developer Portfolio</title>
+    <style>
+        /* --- PHONG CÁCH TỐI GIẢN HIỆN ĐẠI (CẢM HỨNG NASA) --- */
+        :root {
+            --bg-color: #0b0d17; /* Màu nền tối vũ trụ */
+            --card-bg: #161925;  /* Màu nền thẻ nội dung */
+            --text-color: #f1f1f1;
+            --accent-color: #11fff7; /* Màu xanh neon công nghệ */
+            --btn-hover: #0dc7c1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Thanh điều hướng (Navbar) */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: rgba(11, 13, 23, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #222536;
+        }
+
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: var(--text-color);
+        }
+
+        nav .logo span { color: var(--accent-color); }
+
+        nav ul { display: flex; list-style: none; }
+
+        nav ul li { margin-left: 30px; }
+
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover { color: var(--accent-color); }
+
+        /* Khu vực giới thiệu (Hero Section) */
+        .hero {
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(to bottom, rgba(11,13,23,0.5), var(--bg-color)), 
+                        url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #8a939f;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        /* Container chung */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        /* Định dạng tiêu đề phần - Đã sửa lỗi */
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 40px;
+            text-align: center;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0;
+        }
+
+        /* Bố cục Grid cho phần mềm */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid #222536;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .card-body { padding: 25px; }
+
+        .card-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            color: #a0aec0;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Nút tải xuống (Buttons) */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover { background-color: var(--btn-hover); }
+
+        /* Khung nhúng Video YouTube (Tỷ lệ chuẩn 16:9) */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; 
+            height: 0;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 8px;
+            border: 1px solid #222536;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Chân trang (Footer) */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #05060b;
+            border-top: 1px solid #222536;
+            color: #636e72;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">ENGINEER<span>.DEV</span></div>
+        <ul>
+            <li><a href="#about">Giới Thiệu</a></li>
+            <li><a href="#software">Phần Mềm</a></li>
+            <li><a href="#youtube">Kênh YouTube</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="about">
+        <h1>Kỹ Sư Xây Dựng & Lập Trình Viên</h1>
+        <p>Sáng tạo các công cụ và phần mềm cá nhân giúp tối ưu hóa tiến độ, tính toán kết cấu và tự động hóa kỹ thuật công trình.</p>
+    </section>
+
+    <section class="container" id="software">
+        <h2 class="section-title">PHẦN MỀM CÁ NHÂN</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Tool Tính Cốt Thép Dầm</h3>
+                    <p class="card-text">Hỗ trợ tự động xuất bảng tính toán cốt thép từ file Excel/SAP2000 sang bản vẽ CAD chỉ trong vài giây.</p>
+                    <a href="https://your-download-link.com/file1.zip" class="btn">Tải Xuống (.zip)</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Phần Mềm Quản Lý Tiến Độ</h3>
+                    <p class="card-text">Ứng dụng nhỏ gọn giúp theo dõi khối lượng thi công thực tế tại công trường trực quan sinh động.</p>
+                    <a href="https://your-download-link.com/file2.zip" class="btn">Tải Xuống (.exe)</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="youtube" style="background-color: #0e111f; border-radius: 12px; padding: 40px 20px;">
+        <h2 class="section-title">KÊNH VIDEO CHIA SẺ</h2>
+        <p style="text-align: center; margin-bottom: 30px; color: #a0aec0;">Xem video hướng dẫn sử dụng các phần mềm và kinh nghiệm làm nghề tại đây.</p>
+        
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Bản quyền thuộc về Kỹ sư Lập trình viên cá nhân. Designed with passion.</p>
+    </footer>
+
+</body>
+</html>
